@@ -1,7 +1,7 @@
 const {authUser,verfiyUser} = require('./server');
 
 const setTokenInCookie = (token) => {
-    document.cookie = `jwtToken=${token}; path=./server.js`
+    document.cookie = `jwtToken=${token}; path=./`
 }
 
 const getTokenFromCookie = () => {
