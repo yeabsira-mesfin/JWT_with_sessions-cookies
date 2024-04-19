@@ -27,7 +27,7 @@ const authUser = (username, userid) => {
         return null;
     }else {
         // create the token
-        const token = jwt.sign({id:userid}, secretKey, {expiresIn: '1h'});
+        const token = jwt.sign({id:userid,username: username}, secretKey, {expiresIn: '1h'});
         return token;
     }
 }
