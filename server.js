@@ -6,14 +6,14 @@ const secretKey = process.env.secretKey || 'default';
 // Users
 
 const Users = [
-    {id:1, username: 'user1', password: '123'},
-    {id:2, username: 'user2', password: '456'}
+    {id:1, username: 'Alicia', password: 'AL20'},
+    {id:2, username: 'Aron', password: 'AR23'}
 ];
 
 
 // Authentication function
 
-const authUser = (username, userid) => {
+const authUser = (username, userid,password) => {
     // Check if the user exists.
 
     const user = Users.find(user => 
@@ -27,7 +27,7 @@ const authUser = (username, userid) => {
         return null;
     }else {
         // create the token
-        const token = jwt.sign({id:userid,username: username}, secretKey, {expiresIn: '1h'});
+        const token = jwt.sign({id:userid,username: username, password:password}, secretKey, {expiresIn: '1h'});
         return token;
     }
 }

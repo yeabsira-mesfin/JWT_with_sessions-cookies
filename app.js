@@ -2,11 +2,12 @@ const {authUser, verfiyUser} = require('./server');
 
 // Using both authUser and verifyUser methods.
 
-const name = 'user1';
+const name = 'Alicia';
 const id = 1;
+const password = 'AL20'
 
 console.log(`Attempting to authenticate user ${name}`);
-const authenticate = authUser(name,id);
+const authenticate = authUser(name,id,password);
 
 if(authenticate) {
     console.log('Authentication successful!');
